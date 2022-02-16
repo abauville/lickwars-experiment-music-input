@@ -1,0 +1,13 @@
+// Place all the styles related to the solutions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+div#score {
+  background-color: rgb(215, 206, 178);
+
+}
+.vf-stavenote:hover path {
+  stroke:rgb(36, 80, 255);
+  fill: rgb(36, 80, 255);
+  filter: drop-shadow(0 0 0.1rem rgba(36, 80, 255, 0.8));
+}
