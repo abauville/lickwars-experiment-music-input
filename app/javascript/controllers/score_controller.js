@@ -15,6 +15,7 @@ export default class extends Controller {
 
   connect() {
     this.outputTarget.textContent = 'Hello, Stimulus!'
+    this.currentSelection = null;
     const VF = Vex.Flow;
     this.vf = new Vex.Flow.Factory({renderer: {elementId: 'score'}});
     this.counter = 0
@@ -46,16 +47,30 @@ export default class extends Controller {
 
     console.log("redraw");
     this.vf.draw();
-
-
-
     this.counter += 1
 
-
-    // console.log("system", this.system);
-    // // console.log("notes", this.score.notes);
-    // this.vf.draw();
+    this.add_action_to_notes()
   }
+
+  add_action_to_notes() {
+    const svg = document.querySelector("svg");
+    const notes = svg.querySelectorAll(".vf-stavenote");
+    console.log("svg", svg);
+    console.log("notes", notes);
+    notes.forEach((note) => {note.setAttribute("data-action", "click->score#clickNote")});
+  }
+
+  clickNote(event) {
+    console.log("note clicked");
+    if (this.currentSelection) {
+      this.currentSelection.classList.remove("selected");
+    }
+    if (this.currentSelection !== event.currentTarget) {
+      this.currentSelection = event.currentTarget;
+      this.currentSelection.classList.add("selected");
+    }
+  }
+
 
     // // To delete individual notes
     // // Open a group to hold all the SVG elements in the measure:

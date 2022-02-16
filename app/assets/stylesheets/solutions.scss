@@ -11,3 +11,8 @@ div#score {
   fill: rgb(36, 80, 255);
   filter: drop-shadow(0 0 0.1rem rgba(36, 80, 255, 0.8));
 }
+
+.vf-stavenote.selected path{
+  stroke:red;
+  fill: red;
+}
