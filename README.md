@@ -1,5 +1,10 @@
 # README
 
+## TO DO
+
+- after redraw, find the note again and give the focus to be able to move several times
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
